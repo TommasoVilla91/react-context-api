@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AlertContext = createContext();
 
@@ -14,4 +14,8 @@ function AlertProvider({children}) {
     );
 };
 
-export {AlertProvider};
+function useAlertContext() {
+    return useContext(AlertContext);
+};
+
+export {AlertProvider, useAlertContext};
